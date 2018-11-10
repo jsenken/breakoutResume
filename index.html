@@ -373,7 +373,15 @@
                 }
                 if (level === 4) {
                     fourthModal.style.display ="block";
+                    resumeBtn2.onclick = function() {
+                        fourthModal.style.display = "none";
+                        resumeModal.style.display ="block";
+                    }
+                    span.onclick = function() {
+                        document.location.reload();
+                    }
                 }
+                
 
 
             }
