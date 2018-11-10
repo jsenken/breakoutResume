@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <meta charset= "utf-8" />
+        <title> Gamedev Canvas Workshop</title>
+        <style>
+            * { padding: 0; margin: 0; }
+            canvas {
+                background: #eee; 
+                display: block; 
+                margin: 0 auto; }
+
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1; /* Sit on top */
+                padding-top: 100px; /* Location of the box */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0,0,0); /* Fallback color */
+                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                text-align: center;
+            }
+
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: auto;
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%;
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaaaaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: #000;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .resume {
+                height: 500px;
+                width: 500px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="480" height="320"></canvas>
+        <div id="startModal" class="modal">
+                <div class="modal-content">
+                    <h1>Welcome to my interactive resume!</h1>
+                    <p> A breakout candidate has a breakout resume</p>
+                    <p> Complete each level of the breakout game to learn more about me</p>
+                    <p> Use the right and left arrow keys or the mouse to move the paddle to deflect the ball into the blocks</p>
+                    <button id="start"> Start </button>
+                </div>
+              
+        </div>
+        <!-- <div id="firstModal" class="modal">
+                <div class="modal-content">
+                        <h1>Work History</h1>
+                        <p> <h2> Ply Gem Windows - Quality Engineer</h2></p>
+                        <p> <h3>June 2017 to Present - Peachtree City, GA</h3></p>
+                        <p> <ul>
+                            <li> Reduced total plant waste by 20% year over year by implementing tracking mechanisms that identified root cause areas and drove projects to reduce occurence rates in those areas</li>
+                            <li> Led plant wide effort to implement 5s across all departments, developed work instructions, and audit practices to increase plant efficiency</li>
+                            <li> Managed crew of ten quality technicians across 2 shifts</li>
+                            </ul>
+                        </p>
+                        <p> <h2> Medtronic - Future Leadership Development Program</h2></p>
+                        <p> <h3>Quality Engineer - Augusta, GA - September 2016 to June 2017</h3></p>
+                        <p> <ul>
+                            <li> Determined root cause for over 100 customer complaints by reviewing historical records, inspecting samples and analyzing historical trends.</li>
+                            <li> Led cross functional teams to disposition over $85,000 in nonconforming product and implemented corrective actions to prevent reoccurence.</li>
+                            </ul>
+                        </p>
+                        <p> <h3>Process Engineer - Greenwood, SC - January 2016 to September 2016</h3></p>
+                        <p> <ul>
+                            <li> Earned Six Sigma Greenbelt and produced over $55,000 in cost savings by using DMAIC process to identify savings opportunities.</li>
+                            <li> Drove 10 continuous improvement projects by using statistical tools to analyze trial results, and then writing and executing validation protocols.</li>
+                            </ul>
+                        </p>
+                        <p> <h3>Production Supervisor - Camden, SC - May 2015 to January 2016</h3></p>
+                        <p> <ul>
+                            <li> Managed nightly production of 30-50 employees, handled corrective actions, conflict management and overtime scheduling of employees.</li>
+                            <li> Scheduled nightly machine production to fulfill customer demand forecasts.</li>
+                            </ul>
+                        </p>
+                        <button id="next"> Next Level </button>
+                </div>
+        </div> -->
+        <div id="secondModal" class="modal">
+                <div class="modal-content">
+                    <h1>Eduction History</h1>
+                    <p><h2>Georgia Tech Coding Bootcamp</h2></p>
+                    <p><h3>May 2018 to November 2018 (Atlanta, GA)</h3></p>
+                    <p><h3>Skills learned: </h3></p>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>jQuery</li>
+                        <li>API</li>
+                        <li>AJAX</li>
+                        <li>Firebase</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>Handlebars</li>
+                        <li>Sequelize</li>
+                        <li>React</li>
+                        <li>MySQL</li>
+                        <li>MongoDB</li>
+                        <li>Mongoose</li>
+                        <li>C#</li>
+                    </ul>
+                    <p><h2>Georgia Institue of Technology</h2></p>
+                    <p><h3>August 2015 to May 2015 (Atlanta, GA)</h3></p>
+                    <p><h3>Bachelor of Science in Material Science and Engineering</h3></p>
+
+                    <button id="next2"> Next Level </button>
+                </div>
+        </div>
+        <div id="thirdModal" class="modal">
+                <div class="modal-content">
+                    <h1>Links</h1>
+                    <h2>Github: <a href="https://github.com/jsenken" target="_blank">Profile</a></h2>
+                    <h2>Portfolio: <a href="https://jsenken.github.io/Portfolio/" target="_blank">Website</a></h2>
+                    <h2>LinkedIn: <a href="https://www.linkedin.com/in/jordan-senken-b64016170/" target="_blank">Profile</a></h2>
+                    <button id="next3"> Next Level </button>
+                </div>
+        </div>
+        <div id="fourthModal" class="modal">
+                <div class="modal-content">
+                    <h1>You Win!</h1>
+                    <button id="resume2"> See My Resume! </button>
+                </div>
+        </div>
+        <div id="endModal" class="modal">
+                <div class="modal-content">
+                    <h1>Game Over!</h1>
+                    <p> Would you like to keep playing or see my whole resume? </p>
+                    <button id="resume"> See My Resume! </button>
+                </div>
+              
+        </div>
+        <div id="resumeModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <img class="resume" src="resume.png">
+                </div>
+              
+        </div>
+        <button id="open">Open </button>
+    </body>
+    <script>
+        var secondModal = document.getElementById('secondModal');
+        var thirdModal = document.getElementById('thirdModal');
+        var resumeModal = document.getElementById('resumeModal');
+        var openBtn = document.getElementById("open");
+
+        openBtn.onclick = function() {
+            resumeModal.style.display = "block";
+        }
+    
+    </script>
+</html>
